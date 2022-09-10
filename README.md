@@ -25,9 +25,9 @@ Note: the username and password are both: ubuntu<br/>
 <h3>Issues found in catkin build (due to dVRK cisst)</h3>
 1. When running the “$catkin build –summary”, and you see errors, such as:<br/>
  <p><pre>Make Error at /home/ubuntu/catkin_ws/src/cisst-saw/sawForceDimensionSDK/example/CMakeLists.txt:25 (find_package): 
-  Could not find a configuration file for package “cisst” that is compatible with requested version “1.0.11”….
-  The following configuration files were considered but not accepted:
-  /home/ubuntu/catkin_ws/devel/cmake/cisst-config.cmake, version 1.1.0</pre></p>
+Could not find a configuration file for package “cisst” that is compatible with requested version “1.0.11”….
+The following configuration files were considered but not accepted:
+/home/ubuntu/catkin_ws/devel/cmake/cisst-config.cmake, version 1.1.0</pre></p>
 2. Edit the file:<br/>
   <pre>$sudo nano /home/ubuntu/catkin_ws/src/cisst-saw/sawForceDimensionSDK/example/CMakeLists.txt</pre><br/>
 3. and change the following<br/>
@@ -45,21 +45,21 @@ The following configuration files were considered but not accepted:
    <pre>$sudo nano /home/ubuntu/catkin_ws/src/dvrk-ros/dvrk_robot/CMakeLists.txt</pre><br/>
 3. and change the following lines<br/>
    <p><pre>find_package(sawRobotIO1394 2.1.0 REQUIRED)
-   find_package(sawIntuitiveResearchKit 2.1.0 REQUIRED)</pre></p>
+find_package(sawIntuitiveResearchKit 2.1.0 REQUIRED)</pre></p>
 4. To <br/>
    <p><pre>find_package(sawRobotIO1394 2.0.0 REQUIRED)
-   find_package(sawIntuitiveResearchKit 2.0.1 REQUIRED)</pre></p>
+find_package(sawIntuitiveResearchKit 2.0.1 REQUIRED)</pre></p>
 <br/>   
 1. Edit the file:<br/>
    <pre>$gedit ~/catkin_ws/src/cisst-saw/sawConstraintController/examples/CMakeLists.txt</pre>
 2. Comment out the following lines:<br/>
    <p><pre>#add_subdirectory (SimpleCommunication)
-   #add_subdirectory(BasicSetup)</pre></p>
+#add_subdirectory(BasicSetup)</pre></p>
 3. Edit the file:<br/>
    <pre>$gedit ~/catkin_ws/src/cisst-saw/sawOptoforceSensor/examples/CMakeLists.txt</pre>
 4. Comment out the following lines:<br/>
    <p><pre>#add_subdirectory (console)
-   #add_subdirectory (Qt)</pre></p>
+#add_subdirectory (Qt)</pre></p>
 <br/>
 
 
