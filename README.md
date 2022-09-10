@@ -24,23 +24,23 @@ e)Set up the envirionment:<br/>
 Note: the username and password are both: ubuntu<br/>
 <h3>Issues found in catkin build (due to dVRK cisst)</h3>
 1. When running the “$catkin build –summary”, and you see errors, such as:<br/>
- <p><pre>Make Error at /home/ubuntu/catkin_ws/src/cisst-saw/sawForceDimensionSDK/example/CMakeLists.txt:25 (find_package): <br/>
-  Could not find a configuration file for package “cisst” that is compatible with requested version “1.0.11”….<br/>
-  The following configuration files were considered but not accepted:<br/>
-  /home/ubuntu/catkin_ws/devel/cmake/cisst-config.cmake, version 1.1.0<br/></pre></p>
+ <p><pre>Make Error at /home/ubuntu/catkin_ws/src/cisst-saw/sawForceDimensionSDK/example/CMakeLists.txt:25 (find_package): 
+  Could not find a configuration file for package “cisst” that is compatible with requested version “1.0.11”….
+  The following configuration files were considered but not accepted:
+  /home/ubuntu/catkin_ws/devel/cmake/cisst-config.cmake, version 1.1.0</pre></p>
 2. Edit the file:<br/>
-  $sudo nano /home/ubuntu/catkin_ws/src/cisst-saw/sawForceDimensionSDK/example/CMakeLists.txt<br/>
+  <pre>$sudo nano /home/ubuntu/catkin_ws/src/cisst-saw/sawForceDimensionSDK/example/CMakeLists.txt</pre><br/>
 3. and change the following<br/>
-find_package(cisst 1.0.11 REQUIRED ….)<br/>
+<pre>find_package(cisst 1.0.11 REQUIRED ….)</pre><br/>
 4. To<br/>
-find_package(cisst 1.1.0 REQUIRED ….)<br/>
+<pre>find_package(cisst 1.1.0 REQUIRED ….)</pre><br/>
 Note: you may have to edit a few files like this….<br/>
 <br/>
 1. When running the “$catkin build –summary”, and you see errors, such as:<br/>
-   Make Error at /home/ubuntu/catkin_ws/src/dvrk-ros/dvrk_robot/CMakeLists.txt:66 (find_package): <br/>
-   Could not find a configuration file for package “sawIntuitiveResearchKit” that is compatible with requested version “2.1.0”….<br/>
-   The following configuration files were considered but not accepted:<br/>
-   /home/ubuntu/catkin_ws/devel/share/sawIntuitiveResearchKit/cmake/sawIntuitiveResearchKitConfig.cmake, version 2.0.1<br/>
+   <p><pre>Make Error at /home/ubuntu/catkin_ws/src/dvrk-ros/dvrk_robot/CMakeLists.txt:66 (find_package): 
+   Could not find a configuration file for package “sawIntuitiveResearchKit” that is compatible with requested version “2.1.0”….
+   The following configuration files were considered but not accepted:
+   /home/ubuntu/catkin_ws/devel/share/sawIntuitiveResearchKit/cmake/sawIntuitiveResearchKitConfig.cmake, version 2.0.1</pre></p>
 2. Edit the file:<br/>
    <pre>$sudo nano /home/ubuntu/catkin_ws/src/dvrk-ros/dvrk_robot/CMakeLists.txt</pre><br/>
 3. and change the following lines<br/>
