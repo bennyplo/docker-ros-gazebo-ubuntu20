@@ -35,6 +35,36 @@ find_package(cisst 1.0.11 REQUIRED ….)<br/>
 4. To<br/>
 find_package(cisst 1.1.0 REQUIRED ….)<br/>
 Note: you may have to edit a few files like this….<br/>
+<br/>
+1. When running the “$catkin build –summary”, and you see errors, such as:<br/>
+   Make Error at /home/ubuntu/catkin_ws/src/dvrk-ros/dvrk_robot/CMakeLists.txt:66 (find_package): <br/>
+   Could not find a configuration file for package “sawIntuitiveResearchKit” that is compatible with requested version “2.1.0”….<br/>
+   The following configuration files were considered but not accepted:<br/>
+   /home/ubuntu/catkin_ws/devel/share/sawIntuitiveResearchKit/cmake/sawIntuitiveResearchKitConfig.cmake, version 2.0.1<br/>
+2. Edit the file:<br/>
+   $sudo nano /home/ubuntu/catkin_ws/src/dvrk-ros/dvrk_robot/CMakeLists.txt<br/>
+3. and change the following lines<br/>
+   find_package(sawRobotIO1394 2.1.0 REQUIRED)<br/>
+   find_package(sawIntuitiveResearchKit 2.1.0 REQUIRED)<br/>
+4. To <br/>
+   find_package(sawRobotIO1394 2.0.0 REQUIRED)<br/>
+   find_package(sawIntuitiveResearchKit 2.0.1 REQUIRED)<br/>
+<br/>   
+1. Edit the file:<br/>
+   $gedit ~/catkin_ws/src/cisst-saw/sawConstraintController/examples/CMakeLists.txt<br/>
+2. Comment out the following lines:<br/>
+   #add_subdirectory (SimpleCommunication)<br/>
+   #add_subdirectory(BasicSetup)<br/>
+3. Edit the file:<br/>
+   $gedit ~/catkin_ws/src/cisst-saw/sawOptoforceSensor/examples/CMakeLists.txt<br/>
+4. Comment out the following lines:<br/>
+   #add_subdirectory (console)<br/>
+   #add_subdirectory (Qt)<br/>
+<br/>
+
+
+
+
 
 
 
