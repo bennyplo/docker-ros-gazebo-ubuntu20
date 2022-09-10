@@ -6,3 +6,5 @@ bennyplo1218/ros-gazebo-20:latest
 
 To build the docker image
 $./build_docker
+To run the docker image
+$./Run_docker
