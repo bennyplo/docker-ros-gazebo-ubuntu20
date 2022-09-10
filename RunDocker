@@ -1,0 +1,5 @@
+#sudo docker run -it --rm --name=ros_gazebo_python -m=4g -p 6080:80 -p 
+5900:5900 -v $PWD/data:/home/ubuntu/data -e RESOLUTION=1024x768 -e USER=ubuntu -e PASSWORD=ubuntu ros_gazebo20
+
+sudo docker run -it --name=ros-gazebo-20 -m=4g -p 6080:80 -p 5900:5900 -v $PWD/data:/home/ubuntu/data -e RESOLUTION=1024x768 -e USER=ubuntu -e PASSWORD=ubuntu ros_gazebo20
+
