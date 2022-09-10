@@ -22,3 +22,23 @@ d)If you see errors, try running the “catkin build” again<br/>
 e)Set up the envirionment:<br/>
 	$source ~/catkin_ws/devel/setup.bash<br/>
 Note: the username and password are both: ubuntu<br/>
+<h3>Issues found in catkin build (due to dVRK cisst)</h3>
+1. When running the “$catkin build –summary”, and you see errors, such as:<br/>
+  Make Error at /home/ubuntu/catkin_ws/src/cisst-saw/sawForceDimensionSDK/example/CMakeLists.txt:25 (find_package): <br/>
+  Could not find a configuration file for package “cisst” that is compatible with requested version “1.0.11”….<br/>
+  The following configuration files were considered but not accepted:<br/>
+  /home/ubuntu/catkin_ws/devel/cmake/cisst-config.cmake, version 1.1.0<br/>
+2. Edit the file:<br/>
+  $sudo nano /home/ubuntu/catkin_ws/src/cisst-saw/sawForceDimensionSDK/example/CMakeLists.txt<br/>
+3. and change the following<br/>
+find_package(cisst 1.0.11 REQUIRED ….)<br/>
+4. To<br/>
+find_package(cisst 1.1.0 REQUIRED ….)<br/>
+Note: you may have to edit a few files like this….<br/>
+
+
+
+
+
+
+
