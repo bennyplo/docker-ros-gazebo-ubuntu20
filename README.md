@@ -38,28 +38,28 @@ Note: you may have to edit a few files like this….<br/>
 <br/>
 1. When running the “$catkin build –summary”, and you see errors, such as:<br/>
    <p><pre>Make Error at /home/ubuntu/catkin_ws/src/dvrk-ros/dvrk_robot/CMakeLists.txt:66 (find_package): 
-   Could not find a configuration file for package “sawIntuitiveResearchKit” that is compatible with requested version “2.1.0”….
-   The following configuration files were considered but not accepted:
-   /home/ubuntu/catkin_ws/devel/share/sawIntuitiveResearchKit/cmake/sawIntuitiveResearchKitConfig.cmake, version 2.0.1</pre></p>
+Could not find a configuration file for package “sawIntuitiveResearchKit” that is compatible with requested version “2.1.0”….
+The following configuration files were considered but not accepted:
+/home/ubuntu/catkin_ws/devel/share/sawIntuitiveResearchKit/cmake/sawIntuitiveResearchKitConfig.cmake, version 2.0.1</pre></p>
 2. Edit the file:<br/>
    <pre>$sudo nano /home/ubuntu/catkin_ws/src/dvrk-ros/dvrk_robot/CMakeLists.txt</pre><br/>
 3. and change the following lines<br/>
-   find_package(sawRobotIO1394 2.1.0 REQUIRED)<br/>
-   find_package(sawIntuitiveResearchKit 2.1.0 REQUIRED)<br/>
+   <p><pre>find_package(sawRobotIO1394 2.1.0 REQUIRED)
+   find_package(sawIntuitiveResearchKit 2.1.0 REQUIRED)</pre></p>
 4. To <br/>
-   find_package(sawRobotIO1394 2.0.0 REQUIRED)<br/>
-   find_package(sawIntuitiveResearchKit 2.0.1 REQUIRED)<br/>
+   <p><pre>find_package(sawRobotIO1394 2.0.0 REQUIRED)
+   find_package(sawIntuitiveResearchKit 2.0.1 REQUIRED)</pre></p>
 <br/>   
 1. Edit the file:<br/>
-   $gedit ~/catkin_ws/src/cisst-saw/sawConstraintController/examples/CMakeLists.txt<br/>
+   <pre>$gedit ~/catkin_ws/src/cisst-saw/sawConstraintController/examples/CMakeLists.txt</pre>
 2. Comment out the following lines:<br/>
-   #add_subdirectory (SimpleCommunication)<br/>
-   #add_subdirectory(BasicSetup)<br/>
+   <p><pre>#add_subdirectory (SimpleCommunication)
+   #add_subdirectory(BasicSetup)</pre></p>
 3. Edit the file:<br/>
-   $gedit ~/catkin_ws/src/cisst-saw/sawOptoforceSensor/examples/CMakeLists.txt<br/>
+   <pre>$gedit ~/catkin_ws/src/cisst-saw/sawOptoforceSensor/examples/CMakeLists.txt</pre>
 4. Comment out the following lines:<br/>
-   #add_subdirectory (console)<br/>
-   #add_subdirectory (Qt)<br/>
+   <p><pre>#add_subdirectory (console)
+   #add_subdirectory (Qt)</pre></p>
 <br/>
 
 
